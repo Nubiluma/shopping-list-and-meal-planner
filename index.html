@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main id="app">
+      <section class="list-section">
+        <div>
+          <form class="input-form" @submit.prevent="addNewListItem()">
+            <input
+              type="text"
+              class="shopping-list-input"
+              placeholder="Add to shopping list..."
+              v-model="newItem"
+            />
+            <input
+              type="number"
+              class="shopping-list-input-quantity"
+              placeholder="Quantity"
+              v-model="newItemQuantity"
+            />
+            <select name="" id="" v-model="quantityMeasurement">
+              <option value="grams">Grams</option>
+              <option value="pieces">Pieces</option>
+              <option value="millilitres">Millilitres</option>
+              <option value="bottles">Bottles</option>
+            </select>
+            <button>Add</button>
+          </form>
+        </div>
+        <div>
+          <ul class="shopping-list">
+            <li v-for="item in shoppingListItems" :key="item">
+              <input type="checkbox" name="" />
+              <label for="">{{item.name}}</label>
+              <span v-if="item.quantity !== null">({{item.quantity}})</span>
+              <button @click="removeListItem(item)">x</button>
+            </li>
+          </ul>
+          <ul></ul>
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 10px;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+}
+
+.shopping-list li {
+  font-size: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.shopping-list input {
+  margin-top: 0.6rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.shopping-list label {
+  padding-inline: 0.5rem;
+}
+
+.shopping-list button {
+  border: none;
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  background-color: transparent;
+  color: gray;
+}
