@@ -36,14 +36,40 @@
         </div>
         <div>
           <ul class="shopping-list">
-            <li v-for="item in shoppingListItems" :key="item">
-              <input type="checkbox" name="" />
-              <label for="">{{item.name}}</label>
-              <span v-if="item.quantity !== null">({{item.quantity}})</span>
-              <button @click="removeListItem(item)">x</button>
-            </li>
+            <template v-for="item in shoppingListItems" :key="item">
+              <li v-if="!item.bought">
+                <input
+                  @change="toggleBoughtStatus(item)"
+                  type="checkbox"
+                  name=""
+                />
+                <label for=""
+                  >{{item.name}}<span v-if="item.quantity !== null"
+                    >({{item.quantity}})</span
+                  ></label
+                >
+                <button @click="removeListItem(item)">x</button>
+              </li>
+            </template>
           </ul>
-          <ul></ul>
+          <ul class="bought-items-list">
+            <template v-for="item in shoppingListItems" :key="item">
+              <li v-if="item.bought">
+                <input
+                  @change="toggleBoughtStatus(item)"
+                  type="checkbox"
+                  name=""
+                  checked="true"
+                />
+                <label for=""
+                  >{{item.name}}<span v-if="item.quantity !== null"
+                    >({{item.quantity}})</span
+                  ></label
+                >
+                <button @click="removeListItem(item)">x</button>
+              </li>
+            </template>
+          </ul>
         </div>
       </section>
     </main>

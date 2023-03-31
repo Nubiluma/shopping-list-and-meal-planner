@@ -37,15 +37,24 @@ Vue.createApp({
         );
         this.shoppingListItems.push(item);
         this.newItem = "";
+        this.newItemQuantity = 0;
         this.updateLocalStorage();
       } else {
         console.error("Cannot add empty string");
       }
     },
     removeListItem(item) {
-      this.shoppingListItems = this.shoppingListItems.filter((element) => {
-        return element !== item;
-      });
+      this.shoppingListItems = this.shoppingListItems.filter(
+        (element) => element !== item
+      );
+      this.updateLocalStorage();
+    },
+    toggleBoughtStatus(item) {
+      const itemIndex = this.shoppingListItems.indexOf(item);
+      this.shoppingListItems[itemIndex].bought =
+        !this.shoppingListItems[itemIndex].bought;
+
+      console.log(this.shoppingListItems[itemIndex]);
       this.updateLocalStorage();
     },
   },

@@ -18,9 +18,33 @@ html {
   align-items: center;
 }
 
-.shopping-list {
+ul {
   list-style: none;
   padding: 0;
+}
+
+ul input {
+  margin-top: 0.6rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+ul label {
+  padding-inline: 0.5rem;
+}
+
+ul label span {
+  padding-inline: 1rem 0.25rem;
+}
+
+ul button {
+  border: none;
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  background-color: transparent;
+  color: gray;
 }
 
 .shopping-list li {
@@ -30,22 +54,14 @@ html {
   align-items: center;
 }
 
-.shopping-list input {
-  margin-top: 0.6rem;
-  width: 2rem;
-  height: 2rem;
+.bought-items-list li {
+  font-size: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
-.shopping-list label {
-  padding-inline: 0.5rem;
-}
-
-.shopping-list button {
-  border: none;
-  font-family: monospace;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  background-color: transparent;
+.bought-items-list label {
+  text-decoration: line-through;
   color: gray;
 }
